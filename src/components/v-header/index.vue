@@ -41,13 +41,21 @@
       seller: {
         type: Object,
         default () {
-          return {}
+          return {
+            headerDetailComp: null
+          }
         }
       }
     },
     methods: {
-      showDetail (e) {
+      showDetail () {
+        this.headerDetailComp = this.headerDetailComp || this.$createHeaderDetail({
+          $prop: {
+            seller: this.seller
+          }
+        })
 
+        this.headerDetailComp.show()
       }
     },
     components: {
