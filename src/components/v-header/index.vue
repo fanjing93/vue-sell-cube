@@ -10,10 +10,10 @@
           <span class="name">{{seller.name}}</span>
         </div>
         <div class="description">
-          {{seller.description}}/{{seller.deliveryTime}}分钟送达
+          {{seller.description}}/{{seller['deliveryTime']}}分钟送达
         </div>
         <div v-if="seller.supports" class="support">
-          <!-- <support-ico :size=1 :type="seller.supports[0].type"></support-ico> -->
+          <support-ico :size=1 :type="seller.supports[0].type"></support-ico>
           <span class="text">{{seller.supports[0].description}}</span>
         </div>
       </div>
@@ -33,7 +33,7 @@
 </template>
 
 <script type="text/ecmascript-6">
-  // import SupportIco from 'components/support-ico/support-ico'
+  import SupportIco from 'components/support-ico/support-ico'
 
   export default {
     name: 'v-header',
@@ -49,6 +49,9 @@
       showDetail (e) {
 
       }
+    },
+    components: {
+      SupportIco
     }
   }
 </script>
