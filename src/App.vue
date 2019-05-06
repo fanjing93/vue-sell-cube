@@ -1,26 +1,30 @@
 <template>
   <div id="app">
-    1111
+    <v-header :seller="seller"></v-header>
   </div>
 </template>
 
 <script>
-  import { getSeller } from './api'
+  import { getSeller } from 'api'
+  import vHeader from 'components/v-header'
 
   export default {
     name: 'app',
-    data() {
+    data () {
       return {
         seller: {}
       }
     },
-    created() {
+    created () {
       this._getSeller()
     },
     methods: {
-      _getSeller() {
-        getSeller()
+      async _getSeller () {
+        this.seller = await getSeller()
       }
+    },
+    components: {
+      vHeader
     }
   }
 </script>
