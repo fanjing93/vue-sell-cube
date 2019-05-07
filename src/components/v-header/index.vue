@@ -50,7 +50,7 @@
     methods: {
       showDetail () {
         this.headerDetailComp = this.headerDetailComp || this.$createHeaderDetail({
-          $prop: {
+          $props: {
             seller: this.seller
           }
         })
