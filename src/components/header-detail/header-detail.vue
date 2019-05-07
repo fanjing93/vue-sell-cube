@@ -1,17 +1,30 @@
 <template>
-  <div v-show="visible" class="header-detail">header detail</div>
+  <div v-show="visible" class="header-detail">header detail
+    <div class="detail-close" @click="hide">
+      <i class="icon-close"></i>
+    </div>
+  </div>
 </template>
 
 <script>
-  import popupMixin from 'common/mixins/popup'
+  // import popupMixin from 'common/mixins/popup'
 
   export default {
     name: 'header-detail',
-    mixins: [popupMixin],
+    // mixins: [popupMixin],
     data () {
-      return {}
+      return {
+        visible: false
+      }
     },
-    methods: {}
+    methods: {
+      show () {
+        this.visible = true
+      },
+      hide () {
+        this.visible = false
+      }
+    }
   }
 </script>
 
