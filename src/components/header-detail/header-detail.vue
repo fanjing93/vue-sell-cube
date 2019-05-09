@@ -3,6 +3,9 @@
     <div class="detail-wrapper">
       <div class="detail-main">
         <div class="name">{{ seller['name'] }}</div>
+        <div class="star-wrapper">
+          <star></star>
+        </div>
       </div>
     </div>
     <div class="detail-close" @click="hide">
@@ -13,6 +16,7 @@
 
 <script>
   // import popupMixin from 'common/mixins/popup'
+  import star from 'components/star'
 
   export default {
     name: 'header-detail',
@@ -25,6 +29,9 @@
       }
     },
     // mixins: [popupMixin],
+    components: {
+      star
+    },
     data () {
       return {
         visible: false
@@ -67,7 +74,11 @@
         line-height: 1
         color: #FFFFFF
         text-align center
-        font-weight:700
+        font-weight: 700
+
+      .star-wrapper
+        margin-top: 16px
+        margin-bottom: 28px
 
     .detail-close
       display: flex
